@@ -19,60 +19,77 @@
 
 <body>
     <div class="wrapper">
-        <form autocomplete="on">
-            <!-- First Name -->
-            <div class="form-group">
-                <label for="firstname">First Name</label>
-                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
-            </div>
-            <!-- Last Name -->
-            <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
-            </div>
-            <!-- Email -->
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" autocomplete="email" placeholder="therealtomcruise@gmail.com">
-            </div>
-            <!-- Country: User will select country, API Hack will apply country code too Phone Number input fields. -->
-            <div class="form-group">
-                <label for="country">Country</label>
-                <input type="text" class="form-control" id="country" name="country" autocomplete="country" placeholder="USA">
-            </div>
-            <!-- Phone Number -->
-            <div class="form-group">
-                <label for="phonenumber">Phone Number</label>
-                <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="+(000)-(012)-345-6789">
-            </div>
-            <!-- Zipcode: User will input zipcode, API Hack will apply City & State data to corresponding input fields. -->
-            <div class="form-group">
-                <label for="zipcode">Zipcode</label>
-                <input type="text" class="form-control" id="zipcode" name="zipcode" autocomplete="postal-code" placeholder="90210">
-            </div>
-            <!-- Street -->
-            <div class="form-group">
-                <label for="street">Street</label>
-                <input type="text" class="form-control" id="street" name="street" placeholder="123 Mulholland Dr.">
-            </div>
-            <!-- City: Will be hidden from form until Zipcode entered & are set to read-only. -->
-            <div class="form-group hidden">
-                <label for="city">City</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Beverly Hills" read-only>
-            </div>
-            <!-- State: Will be hidden from form until Zipcode entered & are set to read-only. -->
-            <div class="form-group hidden">
-                <label for="state">State</label>
-                <input type="text" class="form-control" id="state" name="state" placeholder="California" read-only>
-            </div>
-            <button type="submit" class="btn btn-primary">Add</button>
-        </form>
-        <div class="">
+      <div class="container">
+        <div id="contactFrom" class="row">
+          <div class="col-xs-12">
+            <!-- Create Contact Form -->
+            <form id="form" class="form-horizontal" autocomplete="on">
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                </div>
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                </div>
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" autocomplete="email" placeholder="therealtomcruise@gmail.com">
+                </div>
+                <!-- Country: User will select country, API Hack will apply country code too Phone Number input fields. -->
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" id="country" name="country" autocomplete="country" placeholder="USA">
+                </div>
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="tel" class="form-control" id="phonenumber" name="phonenumber" placeholder="+(000)-(012)-345-6789">
+                </div>
+                <!-- Zipcode: User will input zipcode, API Hack will apply City & State data to corresponding input fields. -->
+                <div class="form-group">
+                    <label for="zipcode">Zipcode</label>
+                    <input type="text" class="form-control" id="zipcode" name="zipcode" autocomplete="postal-code" placeholder="90210">
+                </div>
+                <!-- Street -->
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input type="text" class="form-control" id="street" name="street" placeholder="123 Mulholland Dr.">
+                </div>
+                <!-- City: Will be hidden from form until Zipcode entered & are set to read-only. -->
+                <div class="form-group hidden">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Beverly Hills" read-only>
+                </div>
+                <!-- State: Will be hidden from form until Zipcode entered & are set to read-only. -->
+                <div class="form-group hidden">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" id="state" name="state" placeholder="California" read-only>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+          </div>
+        </div>
+        <div id="contactList"class="row">
+          <div class="col-xs-12">
+            <h2>Contacts:</h2>
+            <ul id="contacts"></ul>
+          </div>
 
         </div>
+        <div id="contactCard" class="row">
+          <div id="content" class="col-xs-12 template">
+            <h3><span id="fullname"></span></h3>
+            <h5><span id="number"></span></h5>
+            <h5><span id="mail"></span></h5>
+            <h5><span id="address"></span></h5>
+          </div>
+        </div>
+      </div>
     </div>
-
-
     <!-- Scripts -->
     <!-- jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
